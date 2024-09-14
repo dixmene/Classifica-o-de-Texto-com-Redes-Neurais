@@ -1,5 +1,5 @@
 
-## Projeto de Classificação de Texto com Redes Neurais
+## Classificação de Sentimentos em Avaliações de Filmes com Redes Neurais Usando o Dataset IMDB
 
 ### 1. Carregamento e Preparação dos Dados
 
@@ -186,8 +186,17 @@ Perda de Validação: 0.6068
 Acurácia de Validação: 0.8265
 ```
 
-**Contextualização dos Resultados:**
-- **Acurácia Final:** A acurácia de teste final foi de 83,39%, indicando que o modelo tem um bom desempenho na classificação de sentimentos em avaliações de filmes.
-- **Visualizações:** Os gráficos mostram a evolução da acurácia e perda durante o treinamento, oferecendo insights sobre o desempenho do modelo ao longo das épocas.
-- **Melhor Desempenho com Dropout:** A inclusão do dropout ajudou a melhorar a acurácia e reduzir a perda de validação em comparação com o modelo sem dropout.
+### Conclusão
 
+Neste projeto de classificação de texto com redes neurais, nosso objetivo foi construir um modelo para analisar e classificar sentimentos em avaliações de filmes do dataset IMDB, distinguindo entre avaliações positivas e negativas. Utilizamos uma arquitetura de rede neural composta por camadas de `Embedding`, `LSTM` e `Dense` para realizar essa tarefa.
+
+**Principais Resultados:**
+- **Acurácia Final:** O modelo obteve uma acurácia de 83,39% no conjunto de teste. Embora essa taxa de acurácia indique um desempenho relativamente bom, há espaço para melhorias, especialmente considerando a complexidade da análise de sentimentos.
+- **Impacto do Dropout:** A inclusão da camada de `Dropout` foi implementada para ajudar a prevenir overfitting. A análise dos resultados após a adição do dropout mostrou que a perda de validação aumentou, sugerindo que talvez a taxa de dropout escolhida não tenha sido a ideal e ajustes adicionais podem ser necessários.
+
+**Análise do Treinamento:**
+- **Épocas de Treinamento:** O treinamento mostrou um desempenho inicial robusto, com a acurácia de treinamento aumentando consistentemente. No entanto, a acurácia de validação apresentou flutuações, o que pode indicar que o modelo estava se ajustando ao conjunto de dados específico, e pode haver uma necessidade de mais regularização ou ajustes nos hiperparâmetros.
+- **Early Stopping:** O uso de early stopping ajudou a prevenir overfitting ao interromper o treinamento quando a perda de validação começou a aumentar. Isso é crucial para garantir que o modelo generalize bem para novos dados.
+
+**Implicações:**
+O projeto demonstrou a eficácia das redes neurais na tarefa de análise de sentimentos, utilizando técnicas avançadas como embeddings e LSTM. A abordagem aplicada proporciona uma base sólida para futuros projetos e aprimoramentos, e as lições aprendidas são valiosas para a construção de modelos de PLN mais precisos e eficientes.
